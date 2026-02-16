@@ -12,10 +12,8 @@ on:
 
 jobs:
   claude:
-    # Allowlist of GitHub usernames who can trigger Claude
-    # Add your organization members here
     if: |
-      contains(fromJson('["DavinciDreams"]'), github.actor) &&
+      github.actor == github.repository_owner &&
       (
         (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
         (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
