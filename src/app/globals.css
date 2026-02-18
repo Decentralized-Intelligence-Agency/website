@@ -1,292 +1,205 @@
 @import "tailwindcss";
 
+/* ============================================================
+   DIA — Cosmic Depth Design System (Amber Variant)
+   Brand Accent: Amber (#F59E0B)
+   Typography: Alegreya (display) + Alegreya Sans (body) + JetBrains Mono (code)
+   Note: Fonts are loaded via next/font/google in layout.tsx
+   ============================================================ */
+
+/* ---------- Dark mode tokens (default) ---------- */
 :root {
-  /* DIA Brand Colors - Light Mode */
-  --dia-blue-50: #eff6ff;
-  --dia-blue-100: #dbeafe;
-  --dia-blue-200: #bfdbfe;
-  --dia-blue-300: #93c5fd;
-  --dia-blue-400: #60a5fa;
-  --dia-blue-500: #3b82f6;
-  --dia-blue-600: #2563eb;
-  --dia-blue-700: #1d4ed8;
-  --dia-blue-800: #1e40af;
-  --dia-blue-900: #1e3a8a;
-  --dia-blue-950: #172554;
+  /* Background depth system */
+  --color-void: #070A12;
+  --color-nebula: #0F1526;
+  --color-deep-space: #161D2E;
+  --color-star-dust: #1E293B;
+  --color-atmosphere: #243044;
 
-  --dia-purple-50: #faf5ff;
-  --dia-purple-100: #f3e8ff;
-  --dia-purple-200: #e9d5ff;
-  --dia-purple-300: #d8b4fe;
-  --dia-purple-400: #c084fc;
-  --dia-purple-500: #a855f7;
-  --dia-purple-600: #9333ea;
-  --dia-purple-700: #7e22ce;
-  --dia-purple-800: #6b21a8;
-  --dia-purple-900: #581c87;
-  --dia-purple-950: #3b0764;
+  /* Brand accent — amber */
+  --color-amber: #F59E0B;
+  --color-amber-light: #FBBF24;
+  --color-amber-dim: #D97706;
 
-  --dia-teal-50: #f0fdfa;
-  --dia-teal-100: #ccfbf1;
-  --dia-teal-200: #99f6e4;
-  --dia-teal-300: #5eead4;
-  --dia-teal-400: #2dd4bf;
-  --dia-teal-500: #14b8a6;
-  --dia-teal-600: #0d9488;
-  --dia-teal-700: #0f766e;
-  --dia-teal-800: #115e59;
-  --dia-teal-900: #134e4a;
-  --dia-teal-950: #042f2e;
+  /* Ecosystem accents (for cross-references) */
+  --color-violet: #7C3AED;
+  --color-violet-light: #A78BFA;
+  --color-cyan: #06B6D4;
+  --color-indigo: #6366F1;
+  --color-galaxy: #8B5CF6;
 
-  --dia-coral-50: #fff1f2;
-  --dia-coral-100: #ffe4e6;
-  --dia-coral-200: #fecdd3;
-  --dia-coral-300: #fda4af;
-  --dia-coral-400: #fb7185;
-  --dia-coral-500: #f43f5e;
-  --dia-coral-600: #e11d48;
-  --dia-coral-700: #be123c;
-  --dia-coral-800: #9f1239;
-  --dia-coral-900: #881337;
-  --dia-coral-950: #4c0519;
+  /* Semantic */
+  --background: var(--color-void);
+  --foreground: #E2E8F0;
+  --muted: #64748B;
+  --muted-foreground: #94A3B8;
+  --card: var(--color-nebula);
+  --card-border: rgba(245, 158, 11, 0.15);
+  --section-alt: var(--color-deep-space);
 
-  --dia-slate-50: #f8fafc;
-  --dia-slate-100: #f1f5f9;
-  --dia-slate-200: #e2e8f0;
-  --dia-slate-300: #cbd5e1;
-  --dia-slate-400: #94a3b8;
-  --dia-slate-500: #64748b;
-  --dia-slate-600: #475569;
-  --dia-slate-700: #334155;
-  --dia-slate-800: #1e293b;
-  --dia-slate-900: #0f172a;
-  --dia-slate-950: #020617;
+  /* Glass */
+  --glass-bg: rgba(15, 21, 38, 0.60);
+  --glass-border: rgba(245, 158, 11, 0.20);
+  --glass-blur: 16px;
 
-  /* Semantic Colors */
-  --dia-success-50: #f0fdf4;
-  --dia-success-500: #22c55e;
-  --dia-success-600: #16a34a;
-  --dia-success-700: #15803d;
+  /* Shadows */
+  --shadow-brand: 0 4px 14px rgba(245, 158, 11, 0.15), 0 2px 6px rgba(0, 0, 0, 0.20);
+  --shadow-glow: 0 0 24px rgba(245, 158, 11, 0.25);
 
-  --dia-warning-50: #fffbeb;
-  --dia-warning-500: #f59e0b;
-  --dia-warning-600: #d97706;
-  --dia-warning-700: #b45309;
-
-  --dia-error-50: #fef2f2;
-  --dia-error-500: #ef4444;
-  --dia-error-600: #dc2626;
-  --dia-error-700: #b91c1c;
-
-  --dia-info-50: #eff6ff;
-  --dia-info-500: #3b82f6;
-  --dia-info-600: #2563eb;
-  --dia-info-700: #1d4ed8;
-
-  /* Theme Variables - Light Mode */
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --primary: #1e3a8a;
-  --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --accent: #9333ea;
-  --accent-foreground: #ffffff;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --border: #e2e8f0;
-  --ring: #2563eb;
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 500ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* ---------- Tailwind @theme ---------- */
 @theme inline {
-  /* Brand Colors */
-  --color-dia-blue-50: var(--dia-blue-50);
-  --color-dia-blue-100: var(--dia-blue-100);
-  --color-dia-blue-200: var(--dia-blue-200);
-  --color-dia-blue-300: var(--dia-blue-300);
-  --color-dia-blue-400: var(--dia-blue-400);
-  --color-dia-blue-500: var(--dia-blue-500);
-  --color-dia-blue-600: var(--dia-blue-600);
-  --color-dia-blue-700: var(--dia-blue-700);
-  --color-dia-blue-800: var(--dia-blue-800);
-  --color-dia-blue-900: var(--dia-blue-900);
-  --color-dia-blue-950: var(--dia-blue-950);
-
-  --color-dia-purple-50: var(--dia-purple-50);
-  --color-dia-purple-100: var(--dia-purple-100);
-  --color-dia-purple-200: var(--dia-purple-200);
-  --color-dia-purple-300: var(--dia-purple-300);
-  --color-dia-purple-400: var(--dia-purple-400);
-  --color-dia-purple-500: var(--dia-purple-500);
-  --color-dia-purple-600: var(--dia-purple-600);
-  --color-dia-purple-700: var(--dia-purple-700);
-  --color-dia-purple-800: var(--dia-purple-800);
-  --color-dia-purple-900: var(--dia-purple-900);
-  --color-dia-purple-950: var(--dia-purple-950);
-
-  --color-dia-teal-50: var(--dia-teal-50);
-  --color-dia-teal-100: var(--dia-teal-100);
-  --color-dia-teal-200: var(--dia-teal-200);
-  --color-dia-teal-300: var(--dia-teal-300);
-  --color-dia-teal-400: var(--dia-teal-400);
-  --color-dia-teal-500: var(--dia-teal-500);
-  --color-dia-teal-600: var(--dia-teal-600);
-  --color-dia-teal-700: var(--dia-teal-700);
-  --color-dia-teal-800: var(--dia-teal-800);
-  --color-dia-teal-900: var(--dia-teal-900);
-  --color-dia-teal-950: var(--dia-teal-950);
-
-  --color-dia-coral-50: var(--dia-coral-50);
-  --color-dia-coral-100: var(--dia-coral-100);
-  --color-dia-coral-200: var(--dia-coral-200);
-  --color-dia-coral-300: var(--dia-coral-300);
-  --color-dia-coral-400: var(--dia-coral-400);
-  --color-dia-coral-500: var(--dia-coral-500);
-  --color-dia-coral-600: var(--dia-coral-600);
-  --color-dia-coral-700: var(--dia-coral-700);
-  --color-dia-coral-800: var(--dia-coral-800);
-  --color-dia-coral-900: var(--dia-coral-900);
-  --color-dia-coral-950: var(--dia-coral-950);
-
-  --color-dia-slate-50: var(--dia-slate-50);
-  --color-dia-slate-100: var(--dia-slate-100);
-  --color-dia-slate-200: var(--dia-slate-200);
-  --color-dia-slate-300: var(--dia-slate-300);
-  --color-dia-slate-400: var(--dia-slate-400);
-  --color-dia-slate-500: var(--dia-slate-500);
-  --color-dia-slate-600: var(--dia-slate-600);
-  --color-dia-slate-700: var(--dia-slate-700);
-  --color-dia-slate-800: var(--dia-slate-800);
-  --color-dia-slate-900: var(--dia-slate-900);
-  --color-dia-slate-950: var(--dia-slate-950);
-
-  /* Semantic Colors */
-  --color-dia-success-50: var(--dia-success-50);
-  --color-dia-success-500: var(--dia-success-500);
-  --color-dia-success-600: var(--dia-success-600);
-  --color-dia-success-700: var(--dia-success-700);
-
-  --color-dia-warning-50: var(--dia-warning-50);
-  --color-dia-warning-500: var(--dia-warning-500);
-  --color-dia-warning-600: var(--dia-warning-600);
-  --color-dia-warning-700: var(--dia-warning-700);
-
-  --color-dia-error-50: var(--dia-error-50);
-  --color-dia-error-500: var(--dia-error-500);
-  --color-dia-error-600: var(--dia-error-600);
-  --color-dia-error-700: var(--dia-error-700);
-
-  --color-dia-info-50: var(--dia-info-50);
-  --color-dia-info-500: var(--dia-info-500);
-  --color-dia-info-600: var(--dia-info-600);
-  --color-dia-info-700: var(--dia-info-700);
-
-  /* Theme Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+  --color-amber: var(--color-amber);
+  --color-amber-light: var(--color-amber-light);
+  --color-amber-dim: var(--color-amber-dim);
+  --color-violet: var(--color-violet);
+  --color-violet-light: var(--color-violet-light);
+  --color-cyan: var(--color-cyan);
+  --color-indigo: var(--color-indigo);
+  --color-galaxy: var(--color-galaxy);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-border: var(--border);
-  --color-ring: var(--ring);
-
-  /* Spacing */
-  --spacing-container: 1280px;
-
-  /* Typography */
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-display: 'Space Grotesk', sans-serif;
-
-  /* Effects */
-  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --color-card-border: var(--card-border);
+  --color-section-alt: var(--section-alt);
+  --color-void: var(--color-void);
+  --color-nebula: var(--color-nebula);
+  --color-deep-space: var(--color-deep-space);
+  --color-star-dust: var(--color-star-dust);
+  --color-atmosphere: var(--color-atmosphere);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --font-display: var(--font-alegreya), "Georgia", serif;
+  --font-hero: var(--font-alegreya-sc), var(--font-alegreya), "Georgia", serif;
+  --font-body: var(--font-alegreya-sans), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "Fira Code", "Cascadia Code", "Consolas", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark Mode Theme Variables */
-    --background: #0f172a;
-    --foreground: #f1f5f9;
-    --primary: #3b82f6;
-    --primary-foreground: #ffffff;
-    --secondary: #1e293b;
-    --secondary-foreground: #f1f5f9;
-    --accent: #a855f7;
-    --accent-foreground: #ffffff;
-    --muted: #1e293b;
-    --muted-foreground: #94a3b8;
-    --card: #1e293b;
-    --card-foreground: #f1f5f9;
-    --border: #334155;
-    --ring: #3b82f6;
-  }
-}
-
+/* ---------- Base styles ---------- */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-alegreya-sans), system-ui, sans-serif;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Focus styles for accessibility */
-*:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
+::selection {
+  background: rgba(245, 158, 11, 0.3);
+  color: #fff;
 }
 
-/* Remove default button styles */
-button {
-  font-family: inherit;
+/* ---------- Gradient text utility ---------- */
+.gradient-text {
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 50%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+/* ---------- Glass card utility ---------- */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: 1rem;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--dia-slate-100);
+.glass-surface {
+  background: rgba(15, 21, 38, 0.40);
+  border: 1px solid rgba(245, 158, 11, 0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--dia-slate-300);
-  border-radius: 5px;
+/* ---------- Keyframes ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--dia-slate-400);
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
 }
 
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-track {
-    background: var(--dia-slate-800);
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ---------- Prose styling for legal pages ---------- */
+.prose-dark h2 {
+  color: var(--foreground);
+  font-family: var(--font-alegreya), "Georgia", serif;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.prose-dark p {
+  color: var(--muted-foreground);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.prose-dark ul {
+  color: var(--muted-foreground);
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-dark li {
+  margin-bottom: 0.5rem;
+  list-style-type: disc;
+}
+
+.prose-dark strong {
+  color: var(--foreground);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: var(--dia-slate-600);
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
+}
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--dia-slate-500);
-  }
+/* ---------- SR only ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

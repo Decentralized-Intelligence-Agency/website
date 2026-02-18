@@ -2,55 +2,30 @@ export const siteConfig = {
   name: "Decentralized Intelligence Agency",
   shortName: "DIA",
   description:
-    "Advancing collective intelligence through decentralized collaboration and scientific rigor.",
-  url: "https://dia.org",
+    "A 501(c)(3) scientific nonprofit dedicated to increasing collective intelligence through open-source research, development, and education.",
+  url: "https://decentralizedintelligence.agency",
   author: "Decentralized Intelligence Agency",
   links: {
-    twitter: "https://twitter.com/DIA_org",
-    github: "https://github.com/DIA-org",
-    discord: "https://discord.gg/DIA",
-    linkedin: "https://linkedin.com/company/DIA",
+    github: "https://github.com/Decentralized-Intelligence-Agency",
   },
   navItems: [
-    {
-      title: "About",
-      href: "/about",
-    },
-    {
-      title: "Research",
-      href: "/research",
-    },
-    {
-      title: "Get Involved",
-      href: "/get-involved",
-    },
-    {
-      title: "Contact",
-      href: "/contact",
-    },
+    { title: "About", href: "#about" },
+    { title: "Mission", href: "#mission" },
+    { title: "Projects", href: "#projects" },
+    { title: "Research", href: "#research" },
+    { title: "Get Involved", href: "#get-involved" },
   ],
   footerLinks: {
-    organization: [
-      { title: "About Us", href: "/about" },
-      { title: "Our Team", href: "/about#team" },
-      { title: "Financials", href: "/about#financials" },
-      { title: "Careers", href: "/get-involved#careers" },
-    ],
-    research: [
-      { title: "Current Projects", href: "/research#current" },
-      { title: "Publications", href: "/research#publications" },
-      { title: "Open Source", href: "/research#opensource" },
-      { title: "Datasets", href: "/research#datasets" },
-    ],
-    community: [
-      { title: "Donate", href: "/get-involved#donate" },
-      { title: "Volunteer", href: "/get-involved#volunteer" },
-      { title: "Partner", href: "/get-involved#partnerships" },
-      { title: "Newsletter", href: "/get-involved#newsletter" },
+    projects: [
+      { title: "Logos Liber", href: "https://logosliber.org", external: true },
+      { title: "Generous", href: "https://generous.works", external: true },
+      { title: "Galaxy Brain", href: "https://galaxybrain.info", external: true },
+      { title: "Agents of Empire", href: "#projects" },
+      { title: "Monumental Systems", href: "#projects" },
     ],
     legal: [
       { title: "Privacy Policy", href: "/privacy" },
-      { title: "Terms of Service", href: "/terms" },
+      { title: "Terms of Use", href: "/terms" },
       { title: "Donation Policy", href: "/donation-policy" },
     ],
   },

@@ -3,7 +3,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms of Service | DIA",
   description: "Terms and conditions for using the DIA website and services.",
 };
 
@@ -13,17 +13,17 @@ export default function TermsPage() {
       <Navbar />
       <main className="flex-1">
         <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6 sm:py-32 lg:px-8">
-          <h1 className="font-display text-4xl font-bold tracking-tight text-dia-slate-900 sm:text-5xl">
+          <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             Terms of Service
           </h1>
-          <p className="mt-6 text-lg text-dia-slate-700">
+          <p className="mt-6 text-lg text-muted-foreground">
             Last Updated: January 26, 2026
           </p>
 
-          <div className="prose prose-lg mt-12 max-w-none text-dia-slate-700">
+          <div className="prose-dark mt-12 max-w-none">
             <p>
               Welcome to the Decentralized Intelligence Agency (DIA) website. By accessing or using
-              our website at dia.org, you agree to be bound by these Terms of Service.
+              our website, you agree to be bound by these Terms of Service.
             </p>
 
             <h2>1. Acceptance of Terms</h2>
@@ -65,8 +65,8 @@ export default function TermsPage() {
 
             <h2>5. User-Generated Content</h2>
             <p>
-              If you submit content to our website (e.g., comments, forum posts), you grant us a
-              non-exclusive, royalty-free license to use, display, and distribute such content.
+              If you submit content to our website, you grant us a non-exclusive, royalty-free
+              license to use, display, and distribute such content.
             </p>
             <p>You are responsible for:</p>
             <ul>
@@ -83,7 +83,7 @@ export default function TermsPage() {
 
             <h2>7. Disclaimers</h2>
             <p>
-              THE WEBSITE AND ITS CONTENT ARE PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND,
+              THE WEBSITE AND ITS CONTENT ARE PROVIDED &quot;AS IS&quot; WITHOUT WARRANTIES OF ANY KIND,
               EITHER EXPRESS OR IMPLIED. WE DO NOT GUARANTEE THE ACCURACY, COMPLETENESS, OR
               RELIABILITY OF ANY CONTENT.
             </p>
@@ -98,15 +98,13 @@ export default function TermsPage() {
             <h2>9. Links to Other Websites</h2>
             <p>
               Our website may contain links to third-party websites. We are not responsible for the
-              content or practices of these websites. Your interaction with these websites is
-              governed by their terms and policies.
+              content or practices of these websites.
             </p>
 
             <h2>10. Termination</h2>
             <p>
               We reserve the right to suspend or terminate your access to this website at our
-              discretion, without notice, for conduct that violates these Terms or is harmful
-              to other users, us, or third parties.
+              discretion, without notice, for conduct that violates these Terms.
             </p>
 
             <h2>11. Governing Law</h2>
@@ -144,8 +142,7 @@ export default function TermsPage() {
               For questions about these Terms, please contact us at:
             </p>
             <p>
-              <strong>Email:</strong> legal@dia.org<br />
-              <strong>Address:</strong> 123 Innovation Way, San Francisco, CA 94105
+              <strong>Email:</strong> legal@decentralizedintelligence.agency
             </p>
           </div>
         </div>

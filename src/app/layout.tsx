@@ -1,64 +1,68 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Alegreya, Alegreya_Sans, Alegreya_SC } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const alegreya = Alegreya({
+  variable: "--font-alegreya",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const alegreyaSans = Alegreya_Sans({
+  variable: "--font-alegreya-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const alegreyaSC = Alegreya_SC({
+  variable: "--font-alegreya-sc",
+  subsets: ["latin"],
+  weight: ["400", "700", "800", "900"],
   display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Decentralized Intelligence Agency (DIA)",
-    template: "%s | DIA",
-  },
+  title: "Decentralized Intelligence Agency — Intelligence, Liberated",
   description:
-    "Advancing collective intelligence through decentralized collaboration and scientific rigor. The DIA is a 501(c)(3) non-profit research organization.",
+    "A 501(c)(3) scientific nonprofit dedicated to increasing collective intelligence through open-source research, development, and education.",
   keywords: [
+    "decentralized intelligence",
     "collective intelligence",
+    "open source",
+    "scientific nonprofit",
     "AI research",
     "decentralized systems",
-    "scientific research",
-    "non-profit",
-    "artificial intelligence",
-    "human-AI collaboration",
+    "knowledge management",
   ],
   authors: [{ name: "Decentralized Intelligence Agency" }],
-  creator: "Decentralized Intelligence Agency",
-  publisher: "Decentralized Intelligence Agency",
-  metadataBase: new URL("https://dia.org"),
   openGraph: {
+    title: "Decentralized Intelligence Agency — Intelligence, Liberated",
+    description:
+      "A 501(c)(3) scientific nonprofit dedicated to increasing collective intelligence through open-source research, development, and education.",
+    url: "https://decentralizedintelligence.agency",
+    siteName: "Decentralized Intelligence Agency",
     type: "website",
     locale: "en_US",
-    url: "https://dia.org",
-    siteName: "Decentralized Intelligence Agency",
-    title: "Decentralized Intelligence Agency (DIA)",
-    description:
-      "Advancing collective intelligence through decentralized collaboration and scientific rigor.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Decentralized Intelligence Agency (DIA)",
+    title: "Decentralized Intelligence Agency — Intelligence, Liberated",
     description:
-      "Advancing collective intelligence through decentralized collaboration and scientific rigor.",
+      "A 501(c)(3) scientific nonprofit. Open-source research, development, and education for collective intelligence.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  metadataBase: new URL("https://decentralizedintelligence.agency"),
 };
 
 export default function RootLayout({
@@ -67,9 +71,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} font-sans antialiased`}
+        className={`${alegreya.variable} ${alegreyaSC.variable} ${alegreyaSans.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
       </body>

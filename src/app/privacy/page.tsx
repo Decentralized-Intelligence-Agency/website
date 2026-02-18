@@ -3,7 +3,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | DIA",
   description: "Learn how the DIA collects, uses, and protects your personal information.",
 };
 
@@ -13,22 +13,21 @@ export default function PrivacyPage() {
       <Navbar />
       <main className="flex-1">
         <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6 sm:py-32 lg:px-8">
-          <h1 className="font-display text-4xl font-bold tracking-tight text-dia-slate-900 sm:text-5xl">
+          <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             Privacy Policy
           </h1>
-          <p className="mt-6 text-lg text-dia-slate-700">
+          <p className="mt-6 text-lg text-muted-foreground">
             Last Updated: January 26, 2026
           </p>
 
-          <div className="prose prose-lg mt-12 max-w-none text-dia-slate-700">
+          <div className="prose-dark mt-12 max-w-none">
             <p>
               The Decentralized Intelligence Agency (DIA) is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information
-              when you visit our website dia.org.
+              when you visit our website.
             </p>
 
             <h2>1. Information We Collect</h2>
-            <h3>Information You Provide to Us</h3>
             <p>
               We collect information you provide directly to us, including:
             </p>
@@ -39,7 +38,6 @@ export default function PrivacyPage() {
               <li>Newsletter subscriptions</li>
             </ul>
 
-            <h3>Information Automatically Collected</h3>
             <p>
               We automatically collect certain information about your device and usage, including:
             </p>
@@ -83,9 +81,8 @@ export default function PrivacyPage() {
 
             <h2>5. Third-Party Services</h2>
             <p>
-              Our website may integrate third-party services such as Google Analytics, payment processors,
-              and email service providers. These services have their own privacy policies, and we
-              encourage you to review them.
+              Our website may integrate third-party services such as analytics and payment processors.
+              These services have their own privacy policies, and we encourage you to review them.
             </p>
 
             <h2>6. Data Security</h2>
@@ -104,35 +101,32 @@ export default function PrivacyPage() {
               <li>Objection to processing</li>
               <li>Data portability</li>
             </ul>
-            <p>To exercise these rights, contact us at privacy@dia.org</p>
+            <p>To exercise these rights, contact us at privacy@decentralizedintelligence.agency</p>
 
-            <h2>8. Children's Privacy</h2>
+            <h2>8. Children&apos;s Privacy</h2>
             <p>
               Our website is not intended for children under 16. We do not knowingly collect
-              personal information from children under 16. If we become aware of such collection,
-              we will take steps to delete it.
+              personal information from children under 16.
             </p>
 
             <h2>9. International Data Transfers</h2>
             <p>
               Your information may be transferred to and processed in countries other than your own.
-              We ensure appropriate safeguards are in place to protect your information in accordance
-              with this Privacy Policy.
+              We ensure appropriate safeguards are in place to protect your information.
             </p>
 
             <h2>10. Changes to This Policy</h2>
             <p>
               We may update this Privacy Policy from time to time. We will notify you of material
-              changes by posting the new policy on this page and updating the "Last Updated" date.
+              changes by posting the new policy on this page and updating the &quot;Last Updated&quot; date.
             </p>
 
             <h2>11. Contact Us</h2>
             <p>
-              If you have questions about this Privacy Policy or our data practices, please contact us at:
+              If you have questions about this Privacy Policy, please contact us at:
             </p>
             <p>
-              <strong>Email:</strong> privacy@dia.org<br />
-              <strong>Address:</strong> 123 Innovation Way, San Francisco, CA 94105
+              <strong>Email:</strong> privacy@decentralizedintelligence.agency
             </p>
           </div>
         </div>

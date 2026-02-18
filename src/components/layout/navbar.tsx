@@ -1,105 +1,93 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-dia-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <nav className="sticky top-0 z-50 w-full border-b border-card-border bg-void/95 backdrop-blur supports-[backdrop-filter]:bg-void/80">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-14 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-dia-blue-900 to-dia-blue-700 text-white font-bold text-lg">
-                D
-              </div>
-              <div className="hidden sm:block">
-                <div className="font-display font-bold text-lg text-dia-slate-900">
-                  Decentralized Intelligence Agency
-                </div>
-                <div className="text-xs text-dia-slate-600">501(c)(3) Non-Profit</div>
-              </div>
-            </Link>
-          </div>
+          <a href="/" className="flex items-center gap-2">
+            <span className="font-display font-bold text-lg text-foreground">
+              DIA
+            </span>
+            <span className="hidden sm:inline text-xs text-muted-foreground">
+              501(c)(3)
+            </span>
+          </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-1">
+          {/* Desktop nav */}
+          <div className="hidden md:flex md:items-center md:gap-1">
             {siteConfig.navItems.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-4 py-2 text-sm font-medium text-dia-slate-700 transition-colors hover:bg-dia-slate-100 hover:text-dia-blue-900"
+                className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-amber-light"
               >
                 {item.title}
-              </Link>
+              </a>
             ))}
-          </div>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex md:items-center md:space-x-3">
-            <Button variant="outline" size="sm" asChild>
-              <Link href="/get-involved#newsletter">Newsletter</Link>
-            </Button>
-            <Button variant="cta" size="sm" asChild>
-              <Link href="/get-involved#donate">Donate</Link>
-            </Button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="flex md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-dia-slate-700 hover:bg-dia-slate-100 hover:text-dia-blue-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dia-blue-500"
-              aria-expanded={isOpen}
-              aria-label="Main menu"
-            >
-              {isOpen ? (
-                <X className="block h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="block h-6 w-6" aria-hidden="true" />
+            <a
+              href="#get-involved"
+              className={cn(
+                "ml-3 inline-flex h-9 items-center rounded-full px-4",
+                "text-sm font-semibold text-void",
+                "transition-all duration-200",
+                "hover:shadow-[0_0_16px_rgba(245,158,11,0.3)]"
               )}
-            </button>
+              style={{
+                background: "linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%)",
+              }}
+            >
+              Donate
+            </a>
           </div>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="inline-flex md:hidden items-center justify-center rounded-md p-2 text-muted-foreground hover:text-amber-light focus:outline-none focus:ring-2 focus:ring-amber"
+            aria-expanded={isOpen}
+            aria-label="Main menu"
+          >
+            {isOpen ? (
+              <X className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <Menu className="h-5 w-5" aria-hidden="true" />
+            )}
+          </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div
-        className={cn(
-          "md:hidden",
-          isOpen ? "block" : "hidden"
-        )}
-      >
-        <div className="space-y-1 border-t border-dia-slate-200 px-4 pb-3 pt-2">
+      <div className={cn("md:hidden", isOpen ? "block" : "hidden")}>
+        <div className="border-t border-card-border px-4 pb-4 pt-2 space-y-1">
           {siteConfig.navItems.map((item) => (
-            <Link
+            <a
               key={item.href}
               href={item.href}
-              className="block rounded-md px-3 py-2 text-base font-medium text-dia-slate-700 hover:bg-dia-slate-100 hover:text-dia-blue-900"
+              className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:text-amber-light"
               onClick={() => setIsOpen(false)}
             >
               {item.title}
-            </Link>
+            </a>
           ))}
-          <div className="mt-4 space-y-2 border-t border-dia-slate-200 pt-4">
-            <Button variant="outline" size="sm" className="w-full" asChild>
-              <Link href="/get-involved#newsletter" onClick={() => setIsOpen(false)}>
-                Newsletter
-              </Link>
-            </Button>
-            <Button variant="cta" size="sm" className="w-full" asChild>
-              <Link href="/get-involved#donate" onClick={() => setIsOpen(false)}>
-                Donate
-              </Link>
-            </Button>
-          </div>
+          <a
+            href="#get-involved"
+            className="block mt-3 text-center rounded-full py-2 text-sm font-semibold text-void"
+            style={{
+              background: "linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%)",
+            }}
+            onClick={() => setIsOpen(false)}
+          >
+            Donate
+          </a>
         </div>
       </div>
     </nav>
