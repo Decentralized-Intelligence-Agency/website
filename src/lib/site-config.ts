@@ -21,7 +21,6 @@ export const siteConfig = {
       { title: "Generous", href: "https://generous.works", external: true },
       { title: "Galaxy Brain", href: "https://galaxybrain.info", external: true },
       { title: "Agents of Empire", href: "#projects" },
-      { title: "Monumental Systems", href: "#projects" },
     ],
     legal: [
       { title: "Privacy Policy", href: "/privacy" },

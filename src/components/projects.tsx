@@ -37,11 +37,6 @@ const PROJECTS: Project[] = [
     description:
       "Comprehensive AI agent management and orchestration. Built on the principle that users should control their agents, not rent them from platforms.",
   },
-  {
-    name: "Monumental Systems",
-    description:
-      "Production-grade Orleans actor framework development. Co-founded with our technical leadership, Monumental Systems advances distributed systems architecture for real-world applications.",
-  },
 ];
 
 export function Projects() {
